@@ -1,7 +1,9 @@
 from picamera import PiCamera
+import os
 from os import system
 from time import sleep
 import argparse
+from notifier import send_email
 
 # Setup argument parsing and use defaults
 parser = argparse.ArgumentParser()
@@ -28,3 +30,4 @@ for i in range(args.number_of_images):
 print('Done taking pics. Generating GIF')
 system('convert -delay {} -loop 0 {}/image*.jpg {}/animation.gif'.format(args.gif_image_delay, media_path, media_path))
 print('done converting GIFs')
+send_email(os.environ['SUNRISE_RECIPIENT'], 'It''s a glorious sunrise!', 'Check out this amazing animation of the sunrise that you missed while you were asleep', ['/home/pi/glorious-sunrise/media/animation.gif'])

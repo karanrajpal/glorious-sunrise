@@ -25,6 +25,8 @@ camera = PiCamera()
 if (args.compress):
     camera.resolution = (640, 480)
 
+camera.exposure_mode = 'spotlight'
+
 for i in range(args.number_of_images):
     print('Taking picture numer {}'.format(i))
     camera.capture('{0}/image{1:04d}.jpg'.format(media_path, i))

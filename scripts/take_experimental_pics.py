@@ -8,7 +8,7 @@ media_path = '/home/pi/glorious-sunrise/media'
 NUMBER_OF_PICS = 10
 CLICK_GAP_S = 3
 
-shortlisted_exposure_modes = ['spotlight']
+shortlisted_exposure_modes = ['off', 'auto', 'night', 'nightpreview', 'backlight', 'spotlight', 'sports', 'snow', 'beach', 'verylong', 'fixedfps', 'antishake', 'fireworks']
 for awb_string in PiCamera.AWB_MODES:
     for exposure_string in shortlisted_exposure_modes:
         sleep(CLICK_GAP_S)

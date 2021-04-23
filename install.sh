@@ -4,8 +4,17 @@ sudo apt-get update
 sudo apt-get install imagemagick -y
 sudo apt-get install gifsicle
 
-cd ~
-git clone https://github.com/karanrajpal/glorious-sunrise.git
+# cd ~
+# git clone https://github.com/karanrajpal/glorious-sunrise.git
+
+
+# Install pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+
+cd scripts
+pip install picamera
+cd ..
 
 # Make media folder which doesn't exist
 mkdir -p glorious-sunrise/media

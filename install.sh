@@ -26,8 +26,11 @@ mkdir -p media
 
 
 # Installing node
-sudo apt install nodejs -y
-sudo apt install npm -y
+# https://www.instructables.com/Install-Nodejs-and-Npm-on-Raspberry-Pi/
+echo "Install nodejs following the instructions in the article above and then continue"
+exit 1
+#sudo apt install nodejs -y
+# sudo apt install npm -y
 
 # We also want to prevent permission errors, so we need following operations (credits to https://stackoverflow.com/questions/49894620/npx-command-not-found):
 mkdir ~/.npm-global # create folder where npm will install packages

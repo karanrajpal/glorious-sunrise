@@ -14,6 +14,8 @@ for awb_string in PiCamera.AWB_MODES:
         sleep(CLICK_GAP_S)
         camera.exposure_mode = exposure_string
         camera.awb_mode = awb_string
+        print(camera.digital_gain)
+        print(camera.analog_gain)
         image_name = '{}/experimental_image_{}_{}.jpg'.format(media_path, exposure_string, awb_string)
         camera.capture(image_name)
         print('Done taking picture {}'.format(image_name))

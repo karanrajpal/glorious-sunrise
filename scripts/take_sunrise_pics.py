@@ -36,9 +36,9 @@ print('Done taking pics. Generating GIF')
 system('convert -delay {} -loop 0 {}/image*.jpg {}'.format(args.gif_image_delay, media_path, output_file_path))
 system('gifsicle -O3 --scale 0.8 {} -o {}'.format(output_file_path, output_file_path))
 print('done converting GIFs')
-send_email(
-    os.environ['SUNRISE_RECIPIENT'],
-    'It''s a glorious sunrise!',
-    'Check out this amazing animation of the sunrise that you missed while you were asleep',
-    [output_file_path]
-)
+# send_email(
+#     os.environ['SUNRISE_RECIPIENT'],
+#     'It''s a glorious sunrise!',
+#     'Check out this amazing animation of the sunrise that you missed while you were asleep',
+#     [output_file_path]
+# )

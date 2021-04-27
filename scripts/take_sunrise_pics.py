@@ -28,7 +28,7 @@ if (args.compress):
 
 for i in range(args.number_of_images):
     print('Taking picture numer {}'.format(i))
-    camera.exposure_mode = 'spotlight'
+    # camera.exposure_mode = 'spotlight'
     camera.capture('{0}/image{1:04d}.jpg'.format(media_path, i))
     sleep(args.capture_interval)
 

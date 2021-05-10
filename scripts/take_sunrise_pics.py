@@ -15,7 +15,9 @@ parser.add_argument("--output_file_name", "-o", default='animation', type=str)  
 args = parser.parse_args()
 
 media_path = '/home/pi/glorious-sunrise/media'
-output_file_path = '{}/{}.gif'.format(media_path, args.output_file_name)
+timestamp=`date +%m_%d_%Y_%I_%M_%S`
+output_file_name=animation_${timestamp}
+output_file_path = '{}/{}.gif'.format(media_path, output_file_name)
 
 print('Clearing out previous media')
 system('rm -rf {}'.format(media_path))

@@ -20,8 +20,8 @@ output_file_name=animation_${timestamp}
 output_file_path = '{}/{}.gif'.format(media_path, output_file_name)
 
 print('Clearing out previous media')
-system('rm -rf {}'.format(media_path))
-system('mkdir {}'.format(media_path))
+system('rm {}/*.jpg'.format(media_path))
+system('mkdir -p {}'.format(media_path))
 
 camera = PiCamera()
 if (args.compress):

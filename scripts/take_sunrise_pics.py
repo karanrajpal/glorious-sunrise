@@ -4,6 +4,7 @@ from os import system
 from time import sleep
 import argparse
 from notifier import send_email
+import datetime
 
 # Setup argument parsing and use defaults
 parser = argparse.ArgumentParser()
@@ -15,7 +16,8 @@ parser.add_argument("--output_file_name", "-o", default='animation', type=str)  
 args = parser.parse_args()
 
 media_path = '/home/pi/glorious-sunrise/media'
-timestamp=system('date +%m_%d_%Y_%I_%M_%S')
+x = datetime.datetime.now()
+timestamp = x.strftime("%m_%d_%Y_%I_%M_%S")
 output_file_name='animation_{}'.format(timestamp)
 output_file_path = '{}/{}.gif'.format(media_path, output_file_name)
 
